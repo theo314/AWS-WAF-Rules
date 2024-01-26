@@ -1,0 +1,27 @@
+{
+    "Name": "AllowMediaUploads",
+    "Priority": 2,
+    "Action": {
+        "Allow": {}
+    },
+    "Statement": {
+        "ByteMatchStatement": {
+            "FieldToMatch": {
+                "UriPath": {}
+            },
+            "PositionalConstraint": "STARTS_WITH",
+            "SearchString": "/wp-json/wp/v2/media",
+            "TextTransformations": [
+                {
+                    "Priority": 0,
+                    "Type": "NONE"
+                }
+            ]
+        }
+    },
+    "VisibilityConfig": {
+        "SampledRequestsEnabled": true,
+        "CloudWatchMetricsEnabled": true,
+        "MetricName": "AllowMediaUploads"
+    }
+}
